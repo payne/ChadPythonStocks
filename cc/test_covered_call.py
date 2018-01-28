@@ -3,7 +3,10 @@ from covered_call import CoveredCall
 
 @pytest.fixture
 def covered_call():
-    cc = CoveredCall("LVS", 73.82, 77.44, 0.41, '2/23/2018', 85.00, 2)
+    parameters = {'symbol':'LVS', 'basis':73.82, 'current_price':77.44, 'bid_price':0.41, 
+        'expiration_date':'2/23/2018', 'strike_price':85.00, 
+        'contracts':2}
+    cc = CoveredCall(**parameters)
     return cc
 
 def test_immediate_gain(covered_call):
