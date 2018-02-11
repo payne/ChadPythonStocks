@@ -5,7 +5,8 @@ from covered_call import *
 
 @given(u'Buy {num:d} shares of {symbol:S} at ${basis:f} with a ${fee:g} fee')
 def step_impl(context, num, symbol, basis, fee):
-    context.cc = CoveredCall(num, symbol, basis, fee)
+    context.cc = CoveredCall()
+    context.cc.setup(num, symbol, basis, fee)
 
 @given(u'{symbol:S} is valued at ${current_price:g}')
 def step_impl(context, symbol, current_price):

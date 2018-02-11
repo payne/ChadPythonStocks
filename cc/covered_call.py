@@ -1,13 +1,16 @@
 class CoveredCall(object):
 
-    def __init__(self, num, symbol, basis, fee):
+    def __init__(self):
+       pass
+
+    def setup(self, num, symbol, basis, fee):
         self.num = num
         self.contracts = num / 100
         self.symbol = symbol
         self.basis = basis
         self.fee = fee
 
-    def __initOLD__(self, symbol, basis, current_price, bid_price, expiration_date, strike_price, contracts):
+    def oldSetup(self, symbol, basis, current_price, bid_price, expiration_date, strike_price, contracts):
         self.symbol = symbol
         self.basis = basis
         self.current_price = current_price
