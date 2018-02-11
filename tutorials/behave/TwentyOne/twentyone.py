@@ -14,5 +14,3 @@ class Dealer():
   def new_round(self):
     self.hand = [_next_card(), _next_card()]
 
-
-
