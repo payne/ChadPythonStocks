@@ -1,5 +1,11 @@
 class CoveredCall(object):
 
+    def __init__(self, num, symbol, basis, fee):
+        self.num = num
+        self.symbol = symbol
+        self.basis = basis
+        self.fee = fee
+
     def __init__(self, symbol, basis, current_price, bid_price, expiration_date, strike_price, contracts):
         self.symbol = symbol
         self.basis = basis
@@ -16,3 +22,4 @@ class CoveredCall(object):
 
     def capped_gain(self):
         return (self.strike_price - self.basis) * 100 * self.contracts - self.fee
+
