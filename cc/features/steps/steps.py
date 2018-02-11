@@ -1,4 +1,5 @@
 from behave import *
+from hamcrest import *
 from covered_call import *
 
 # Parse type table is at https://pythonhosted.org/behave/parse_builtin_types.html
@@ -22,7 +23,7 @@ def step_impl(context, symbol, month, day, year, strike_price, bid_price, c):
 
 @then(u'Profit is capped at ${profit_cap:g} in return for an immediate gain of ${immediate_gain:g}')
 def step_impl(context, profit_cap, immediate_gain):
-    assert(abs(context.cc.capped_gain() - profit_cap) < 0.0001)
-    assert(abs(context.cc.immediate_gain() - immediate_gain) < 0.0001)
+    assert_that(context.cc.capped_gain(), close_to(profit_cap,0.001))
+    assert_that(context.cc.immediate_gain(), close_to(immediate_gain, 0.001))
 
 
