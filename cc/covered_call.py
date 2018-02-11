@@ -2,6 +2,7 @@ class CoveredCall(object):
 
     def __init__(self, num, symbol, basis, fee):
         self.num = num
+        self.contracts = num / 100
         self.symbol = symbol
         self.basis = basis
         self.fee = fee
@@ -19,6 +20,15 @@ class CoveredCall(object):
 
     def current_price(self, current_price):
         self.current_price = current_price
+
+    def strike_price(self, strike_price):
+        self.strike_price = strike_price
+
+    def bid_price(self, bid_price):
+        self.bid_price = bid_price
+
+    def commission(self, c):
+        self.commission = c
 
     def immediate_gain(self):
         return (self.bid_price) * 100 * self.contracts - self.fee - self.commission
