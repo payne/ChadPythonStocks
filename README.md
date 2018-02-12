@@ -1,4 +1,4 @@
-# Simple Learning made better with python3 and pytest
+# Simple Learning made better with python3, behave, and pytest
 
 Try this:
 1. clone this repo
