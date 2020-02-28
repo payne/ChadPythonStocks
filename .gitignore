@@ -1,4 +1,5 @@
-le-env
-__pycache__
-*.swp
-.cache
+bin/
+lib/
+lib64
+pyvenv.cfg
+share/
